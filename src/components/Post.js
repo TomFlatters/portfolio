@@ -11,7 +11,12 @@ function Post({imgurl, title, description, tags, link}){
                 <h2>{title}</h2>
                 <p>{description}</p>
                 <div className="row">
-                    {tags && tags.map(tag => <div>{tag}</div>)}  
+                    {tags && tags.map(tag => { if(tag!==""){
+                        return(<div>{tag}</div>)
+                    }
+                    else{
+                        return null
+                    }})}
                     <div className="read-more"><a href={link}>Read More</a></div>
                 </div>
             </div>

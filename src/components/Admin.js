@@ -33,7 +33,7 @@ function Admin(){
         <div>
             {!loggedIn ?
             (            
-            <div class="admin-login-form">
+            <div className="admin-login-form">
                 <input type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" name="email"/>
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" name="password"/>
                 <button onClick={() => signIn()}>Submit</button>

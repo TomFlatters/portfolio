@@ -172,4 +172,8 @@ a, textarea{
 }
 .admin-add-post-form > div > input, .admin-add-post-form > div > textarea, .admin-add-post-form > div > select{
   font-size: 1em;
+  border: 1px solid #e5e5e5;
+}
+.admin-add-post-form > div > textarea{
+  min-height: 15vh
 }

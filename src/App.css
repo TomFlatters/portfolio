@@ -1,22 +1,175 @@
-.App {
-  text-align: center;
+a, textarea{
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
+.home-page-container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300
+}
+.home-page-column{
+  overflow: hidden;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4vw;
+}
+.home-page-column > div > h1, .home-page-column > h1{
+  /* font-style: italic; */
+  /* text-decoration: underline;  */
+  font-weight: normal;
+  height: 6vh;
+  padding: 0;
+  margin: 2vh 0 ;
+}
+.home-page-column > div > h2{
+  /* font-style: italic; */
+  /* text-decoration: underline;  */
+  font-weight: normal;
+}
+.about-column{
+  width: 20vw;
+  padding-right: 9vw;
+  overflow-y: scroll;
+}
+.about-column > div > p{
+  font-size: 1.1em;
+}
+.about-column > div > ol{
+  margin: 0;
+  padding: 0;
+}
+.about-column > div > ol > li, .read-more{
+  text-decoration: none;
+  list-style-type: none;
+  line-height: 160%;
+  color: #0b9fd5;
+  cursor: pointer
+}
+.about-column > div > ol > li:hover, .read-more:hover{
+  text-decoration: underline;
+}
+.stories-column{
+  width: 59vw;
+  border-left: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+}
+.post-feed{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 38vw;
+  padding: 0 5vw 0 0vw;
+  height: 90vh;
+  overflow-y: scroll !important;
+}
+.post-container{
+  margin: 0 0 5vh 0;
+  padding:0;
+}
+.post-text-box{
+  padding: 0.5vw 0 0 0.5vw;
+  width: 35vw;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  margin: 0 0 1vh 0;
+}
+.with-image{
+  border-top: none;
+}
+.post-container > div > h2{
+  font-weight: normal;
+  margin: 0;
+  padding:0;
+}
+.post-container > div > p{
+  margin: 0;
+  padding: 1vh 0;
+}
+.post-image{
+  width: 35vw;
+  height: auto;
+  display: block;
+  background: #e5e5e5;
+  box-sizing: border-box;
+}
+.row{
+  display: flex;
+  width: 100%;
+  padding: 0 0 1vh 0;
+}
+.row > div{
+  margin: 0 1vw 0 0;
+  padding: 0 1vw;
+  background: #0CD7A6;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.row > div:last-child{
+  margin-left: auto;
+  border: none;
+  color: #0b9fd5;
+  background: none;
+  font-weight: 400  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.filter-column{
+  width: 20vw;
+}
+
+/* Admin stuff */
+.admin-login-form{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
-
-.App-link {
-  color: #09d3ac;
+.admin-header-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 20vh;
+}
+.admin-column-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 80vh;
+  margin-bottom: 5vh;
+}
+.admin-column-container > div{
+  width: 46vw;
+  margin-left: 4vw;
+}
+.admin-add-post-form{
+  display: flex;
+  flex-direction: column;
+  padding-right: 5vw;
+}
+.admin-add-post-form > div{
+  margin: 0 0 1.5vh 0;
+  display: flex;
+  flex-direction: column;
+}
+.admin-add-post-form > div > label{
+  padding-bottom: 0.75vh
+}
+.admin-add-post-form > div > input, .admin-add-post-form > div > textarea, .admin-add-post-form > div > select{
+  font-size: 1em;
 }

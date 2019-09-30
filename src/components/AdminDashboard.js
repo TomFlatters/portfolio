@@ -3,42 +3,65 @@ import '../App.css';
 import { storage, db } from '../Firebase.js'
 import Post from './Post.js'
 
-function AdminDashboard(){
+function AdminDashboard() {
 
     const [newPost, updateNewPost] = useState({
         title: "",
         description: "",
         link: "",
-        tags: ["","",""],
+        tags: ["", "", ""],
         moredetails: "",
         imgurl: ""
     })
 
-    function updatePost(property, val, arrayPos){
-        if(property==='imgurl'){
+    function updatePost(property, val, arrayPos) {
+        if (property === 'imgurl') {
             // upload image to storage bucket, get returned URL and store
-            // uploadImage()
+            uploadImage(val)
             return
         }
-        if(property==='tags'){
+        if (property === 'tags') {
             // push select 'val' to tags array
             let newTags = [...newPost.tags]
             newTags[arrayPos] = val
             let updatedPost = newPost
             updatedPost['tags'] = [...newTags]
-            updateNewPost({...updatedPost})
+            updateNewPost({ ...updatedPost })
             return
         }
         let updatedPost = newPost
         updatedPost[property] = val
-        updateNewPost({...updatedPost})
+        updateNewPost({ ...updatedPost })
     }
 
+    function uploadImage(file){
+        let newRef = storage.ref().child(`post-images/${newPost.title}.jpg`)
+        let uploadTask = newRef.put(file, {contentType: "image/jpeg"})
+        uploadTask.on('state_changed', function(snapshot){
+          }, function(error) {
+            console.log(`ERROR DURING UPLOAD: ${error}`)
+          }, function() {
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+              console.log('File available at', downloadURL);
+              let updatedPost = newPost
+              updatedPost['imgurl'] = downloadURL
+              updateNewPost({...updatedPost})
+            });
+          });
 
-    return(
+    }
+
+    function submitPost(){
+        // send post to firebase
+        db.collection('posts').add({...newPost})
+        .then(function(docRef){console.log(`Post has ID ${docRef.id}`)})
+        .catch(function(error){console.log(`Post upload caused error: ${error}`)})
+    }
+
+    return (
         <div>
             <div className="admin-header-row">
-               <h1>Welcome back, Tom.</h1>
+                <h1>Welcome back, Tom.</h1>
             </div>
             <div className="admin-column-container">
                 <div>
@@ -47,15 +70,15 @@ function AdminDashboard(){
                         <div>
                             <label>Title</label>
                             <input onChange={e => updatePost('title', e.target.value)} type="text"></input>
-                        </div>                        
+                        </div>
                         <div>
                             <label>Description</label>
-                            <textarea onChange={e => updatePost('description', e.target.value)} type="text"/>
-                        </div>                        
+                            <textarea onChange={e => updatePost('description', e.target.value)} type="text" />
+                        </div>
                         <div>
                             <label>Link</label>
                             <input onChange={e => updatePost('link', e.target.value)} type="text"></input>
-                        </div>                        
+                        </div>
                         <div>
                             <label>Tags</label>
                             <select onChange={e => updatePost('tags', e.target.value, 0)}>
@@ -75,18 +98,28 @@ function AdminDashboard(){
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                        </div>                        
+                        </div>
                         <div>
                             <label>Add an image</label>
-                            <input type="file"></input>
-                            <button onClick={() => {}}>Upload Image</button>
+                            <input onChange={(e) => {
+                                console.log(document.getElementById('img-uploader').files[0])
+                            }} type="file" id="img-uploader" accept="image/png, image/jpeg"></input>
+                            <button onClick={() => {
+                                updatePost('imgurl', document.getElementById('img-uploader').files[0])
+                            }}>Upload Image</button>
+                        </div>
+                        <div>
+                            <label>If using an image, please make sure it is visible on the right before submitting post.</label>
+                            <button onClick={() => {
+                                submitPost()
+                            }}>Submit Post</button>
                         </div>
                     </div>
                 </div>
                 <div>
                     <h2>Preview</h2>
                     <div>
-                        <Post 
+                        <Post
                             title={newPost.title}
                             description={newPost.description}
                             imgurl={newPost.imgurl}

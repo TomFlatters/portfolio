@@ -46,14 +46,14 @@ a, textarea{
   margin: 0;
   padding: 0;
 }
-.about-column > div > ol > li, .read-more{
+.about-column > div > ol > li, .read-more, .external-link{
   text-decoration: none;
   list-style-type: none;
   line-height: 160%;
   color: #0b9fd5;
   cursor: pointer
 }
-.about-column > div > ol > li:hover, .read-more:hover{
+.about-column > div > ol > li:hover, .read-more:hover, .external-link:hover{
   text-decoration: underline;
 }
 .stories-column{
@@ -85,10 +85,10 @@ a, textarea{
 .with-image{
   border-top: none;
 }
-.post-container > div > h2{
+.post-container > div > div > h2{
   font-weight: normal;
   margin: 0;
-  padding:0;
+  padding:0 ;
 }
 .post-container > div > p{
   margin: 0;
@@ -101,6 +101,12 @@ a, textarea{
   background: #e5e5e5;
   box-sizing: border-box;
 }
+.post-row{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 2vw;
+}
 .row{
   display: flex;
   width: 100%;
@@ -109,6 +115,7 @@ a, textarea{
 .row > div{
   margin: 0 1vw 0 0;
   padding: 0 1vw;
+  min-height: 3.5vh;
   background: #0CD7A6;
   border-radius: 2px;
   color: white;
@@ -118,7 +125,7 @@ a, textarea{
   align-items: center;
   justify-content: center
 }
-.row > div:last-child{
+.row > div:last-child, .external-link{
   margin-left: auto;
   border: none;
   color: #0b9fd5;

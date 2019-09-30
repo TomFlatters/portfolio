@@ -58,26 +58,6 @@ function Home(){
                             link={post.link}
                         />
                         ))}
-                    <Post
-                        imgurl="https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        title="Trial Post"
-                        description="Post text trial"
-                        tags={["Python", "Game", "PyGame"]}
-                        link="/"   
-                    />
-                    <Post
-                        title="Trial Post"
-                        description="Post text trial"
-                        tags={["Python", "Game", "PyGame"]}
-                        link="/"   
-                    />
-                    <Post
-                        imgurl="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg"
-                        title="Trial Post"
-                        description="Post text trial"
-                        tags={["Python", "Game", "PyGame"]}
-                        link="/"   
-                    />
                 </div>
             </div>
             <div className="home-page-column filter-column">

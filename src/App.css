@@ -21,7 +21,7 @@ a, textarea{
   flex-direction: column;
   padding-left: 4vw;
 }
-.home-page-column > div > h1, .home-page-column > h1{
+h1{
   /* font-style: italic; */
   /* text-decoration: underline;  */
   font-weight: normal;
@@ -29,9 +29,7 @@ a, textarea{
   padding: 0;
   margin: 2vh 0 ;
 }
-.home-page-column > div > h2{
-  /* font-style: italic; */
-  /* text-decoration: underline;  */
+.home-page-column > div > div > h2, #aboutp > h2{
   font-weight: normal;
 }
 .about-column{
@@ -42,22 +40,26 @@ a, textarea{
 .about-column > div > p{
   font-size: 1.1em;
 }
-.about-column > div > ol{
+ol{
   margin: 0;
   padding: 0;
 }
-.about-column > div > ol > li, .links-column > ol > li, .read-more, .external-link{
+li, .read-more, .external-link, #aboutp > ol{
   text-decoration: none;
   list-style-type: none;
   line-height: 160%;
   color: #0b9fd5;
   cursor: pointer
 }
-.about-column > div > ol > li:hover, .links-column > ol > li:hover, .read-more:hover, .external-link:hover{
+.about-column > div > div > ol > li:hover, #aboutp > ol > li:hover, .links-column > ol > li:hover, .read-more:hover, .external-link:hover{
   text-decoration: underline;
 }
+.hide{
+  display: none;
+}
+
 .links-column > ol{
-  margin: 0;
+  margin: 0 0 3vh 0;
   padding: 0;
 }
 .stories-column{
@@ -138,6 +140,75 @@ a, textarea{
 }
 .links-column{
   width: 25vw;
+}
+.links-column > h3, .mobile-links-header{
+  font-weight: 400;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+.mobile-links-header{
+  margin-top: 2vh;
+}
+
+.show{
+  display: auto;
+}
+.hidep{
+  display: none;
+}
+.show > p {
+  max-width: 94vw;
+}
+
+.toggle-mobile-expansion{
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 20px;
+}
+
+/* Clientside breakpoints  */
+@media(max-width: 1000px){
+  .about-column > div > p{
+    font-size: 0.95em;
+  }
+}
+@media(max-width: 800px){
+  .home-page-container{
+    flex-direction: column;
+  }
+  .home-page-column{
+    width: 100vw;
+    padding: 0 3vw 3vh 3vw;
+  }
+  .stories-column{
+    width: 97vw !important;
+  }
+  .post-feed{
+    width: 97vw !important;
+  }
+  .post-image, .post-text-box{
+    width: 94vw;
+  }
+  .full-display{
+    display: none;
+  }
+  .hide{
+    display: flex;
+    flex-direction: column;
+  }
+  .hide > h1{
+    margin-bottom: 0;
+  }
+  .stories-column{
+    order: 1
+  }
+  .links-column{
+    display: none
+  }
+  .stories-column{
+    border: none;
+    padding-bottom: 0;
+  }
 }
 
 /* Admin stuff */

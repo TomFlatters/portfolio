@@ -36,7 +36,7 @@ a, textarea{
 }
 .about-column{
   width: 20vw;
-  padding-right: 9vw;
+  padding-right: 5vw;
   overflow-y: scroll;
 }
 .about-column > div > p{
@@ -46,18 +46,22 @@ a, textarea{
   margin: 0;
   padding: 0;
 }
-.about-column > div > ol > li, .read-more, .external-link{
+.about-column > div > ol > li, .links-column > ol > li, .read-more, .external-link{
   text-decoration: none;
   list-style-type: none;
   line-height: 160%;
   color: #0b9fd5;
   cursor: pointer
 }
-.about-column > div > ol > li:hover, .read-more:hover, .external-link:hover{
+.about-column > div > ol > li:hover, .links-column > ol > li:hover, .read-more:hover, .external-link:hover{
   text-decoration: underline;
 }
+.links-column > ol{
+  margin: 0;
+  padding: 0;
+}
 .stories-column{
-  width: 59vw;
+  width: 54vw;
   border-left: 2px solid #e5e5e5;
   border-right: 2px solid #e5e5e5;
 }
@@ -67,7 +71,7 @@ a, textarea{
   justify-content: flex-start;
   align-items: flex-start;
   width: 38vw;
-  padding: 0 5vw 0 0vw;
+  padding: 0 3vw 0 0vw;
   height: 90vh;
   overflow-y: scroll !important;
 }
@@ -132,10 +136,8 @@ a, textarea{
   background: none;
   font-weight: 400  
 }
-
-
-.filter-column{
-  width: 20vw;
+.links-column{
+  width: 25vw;
 }
 
 /* Admin stuff */

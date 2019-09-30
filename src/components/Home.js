@@ -28,16 +28,6 @@ function Home(){
             <div className="home-page-column about-column">
                 <About />
                 <div>
-                    <h2>Links</h2>
-                    <ol>
-                        <li><a href="/">Computing In Materials Science</a></li>
-                        <li><a href="/">Getting Started With React</a></li>
-                        <li><a href="/">Investing</a></li>
-                        <li><a href="/">teachyourselfcs</a></li>
-                        <li><a href="/">FreeCodeCamp</a></li>
-                    </ol>
-                </div>
-                <div>
                     <h2>Contact</h2>
                     <ol>
                         <li><a href="/">Email</a></li>
@@ -60,9 +50,15 @@ function Home(){
                         ))}
                 </div>
             </div>
-            <div className="home-page-column filter-column">
-                <h1>Filters</h1>
-                <p>Coming soon!</p>
+            <div className="home-page-column links-column">
+                <h1>Links</h1>
+                <ol>
+                    <li><a href="/">Computing In Materials Science</a></li>
+                    <li><a href="/">Getting Started With React</a></li>
+                    <li><a href="/">Investing</a></li>
+                    <li><a href="/">teachyourselfcs</a></li>
+                    <li><a href="/">FreeCodeCamp</a></li>
+                </ol>
             </div>
         </div>
     )

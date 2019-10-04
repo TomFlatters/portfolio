@@ -257,3 +257,34 @@ li, .read-more, .external-link, #aboutp > ol{
 .admin-add-post-form > div > textarea{
   min-height: 15vh
 }
+
+.post-description > h1, .post-description > h2, .post-description > p, .post-description > ul > li{
+  font-size: 1em;
+  padding: 0;
+  margin: 0 0 0 0;
+  padding-left: auto;
+  color: black;
+  list-style-type: disc;
+}
+.post-description > h1 {
+  font-size: 1.3em;
+  font-weight: bold;
+  height: auto;
+  margin-bottom: 1vh;
+
+}
+.post-description > h2{
+  font-size: 1.15em;
+  margin-bottom: 1vh;
+
+}
+.post-description > p, .post-description > ul{
+  margin-bottom: 1vh;
+}
+.post-description > ul{
+  padding: 0;
+  /* clear list formatting */
+}
+.post-description > ul >li{
+  margin: 0 0 0 20px;
+}

@@ -63,6 +63,13 @@ function AdminDashboard() {
             <div className="admin-header-row">
                 <h1>Welcome back, Tom.</h1>
             </div>
+            <div>
+                    # - title <br/>
+                    ## - secondary title <br/>
+                    newline - newline <br/>
+                    ```content``` - code block of content <br/>
+                    * - list item
+            </div>
             <div className="admin-column-container">
                 <div>
                     <h2>Add Posts</h2>

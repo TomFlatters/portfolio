@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ReactMarkdown from 'react-markdown'
 
 function Post({imgurl, title, description, tags, link}){
     const [showText, toggleText] = useState(false)
@@ -15,13 +16,13 @@ function Post({imgurl, title, description, tags, link}){
                 </div>
                 {
                 showText ? (
-                <p>
-                    {description}
+                <p style={{margin: 0, padding: 0}}>
+                    {description && <ReactMarkdown className="post-description" source={description}/>}
                 </p>
                 ) : (
-                <p>
-                    {description && description.slice(0,100)}
-                    {(description && description.length>100) && "..."}
+                <p style={{margin: 0, padding: 0}}>
+                    {description && <ReactMarkdown className="post-description" source={description.slice(0,100)}/>}
+                    {/* {(description && description.length>100) && "..."} */}
                 </p> 
                 )
                 }
